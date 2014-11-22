@@ -3,7 +3,6 @@
 var
     spawn = require('child_process').spawn,
     minimist = require('minimist'),
-    chalk = require('chalk'),
     async = require('async'),
     traverse = require('./lib/traverse');
 
