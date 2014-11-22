@@ -56,12 +56,24 @@ function main(args) {
 
     } else {
 
-        process.chdir(args._[0]);
+        try {
 
-        files = traverse('.');
+            process.chdir(args._[0]);
 
-        // keep the number of max simultaneous open files equal to 10, otherwise EMFILE error will happen
-        async.eachLimit(files, 10, iterateFile, complete);
+            files = traverse('.');
+
+            // keep the number of max simultaneous open files equal to 10, otherwise EMFILE error will happen
+            async.eachLimit(files, 10, iterateFile, complete);
+
+        } catch (e) {
+
+            if (e.code === 'EACCES') {
+                console.info("You don't have access to the folder you're trying to read!");
+            } else {
+                console.error(e);
+                console.trace();
+            }
+        }
     }
 
     function complete(err) {
