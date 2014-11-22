@@ -57,7 +57,9 @@ function main(args) {
 
     } else {
 
-        files = traverse(args._[0]);
+        process.chdir(args._[0]);
+
+        files = traverse('.');
 
         // keep the number of max simultaneous open files equal to 10, otherwise EMFILE error will happen
         async.eachLimit(files, 10, iterateFile, complete);
