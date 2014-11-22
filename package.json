@@ -1,0 +1,34 @@
+{
+  "name": "tats",
+  "version": "0.0.0",
+  "description": "stat wrapper for Node.js",
+  "main": "tats.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stat",
+    "linux",
+    "unix",
+    "osx"
+  ],
+  "author": "Lucio Paiva <lucio@luciopaiva.com> (http://github.com/luciopaiva)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luciopaiva/tats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luciopaiva/tats/issues"
+  },
+  "homepage": "https://github.com/luciopaiva/tats",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^0.9.0",
+    "chalk": "^0.5.1",
+    "minimist": "^1.1.0"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "tats": "tats.js"
+  }
+}
